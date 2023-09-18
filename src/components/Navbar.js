@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Button } from "./Button";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+import CameraAltIcon from "@mui/icons-material/CameraAlt";
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -38,16 +39,17 @@ function Navbar() {
           <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">
               <Link to="/" className="nav-links" onClick={closeMobileMenu}>
-                Home
+                <i class=" fa-solid fa-camera" />
+                <CameraAltIcon color="primary" />
               </Link>
             </li>
             <li className="nav-item">
               <Link
-                to="/services"
+                to="/Playlists"
                 className="nav-links"
                 onClick={closeMobileMenu}
               >
-                Services
+                Playlists
               </Link>
             </li>
             <li className="nav-item">
