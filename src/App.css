@@ -6,9 +6,9 @@
 }
 
 .home,
-.services,
-.products,
-.sign-up {
+.camera,
+.upload,
+.mood-wheel {
   display: flex;
   height: 90vh;
   align-items: center;
@@ -16,8 +16,8 @@
   font-size: 3rem;
 }
 
-.services {
-  background-image: url('/public/images/img-2.jpg');
+.camera {
+  background-image: url('/public/images/img-1.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -25,7 +25,7 @@
   font-size: 100px;
 }
 
-.products {
+.upload {
   background-image: url('/public/images/img-1.jpg');
   background-position: center;
   background-size: fill;
@@ -34,8 +34,8 @@
   font-size: 100px;
 }
 
-.sign-up {
-  background-image: url('/public/images/img-8.jpg');
+.mood-wheel {
+  background-image: url('/public/images/img-1.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
