@@ -15,13 +15,13 @@ function App() {
 
   return (
     <>
-      <Router>
+      {/* <Router>
         <Navbar />
         <Routes>
           <Route path="/" exact></Route>
         </Routes>
       </Router>
-      <Slider />
+      <Slider /> */}
       <BasicTextFields setRows={ setRows } />
       <DenseTable rows={ rows } />
     </>
