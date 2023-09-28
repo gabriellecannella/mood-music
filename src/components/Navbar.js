@@ -3,6 +3,7 @@ import { Button } from "./Button";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
+import { FileUpload, LibraryMusic } from "@mui/icons-material";
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -31,37 +32,30 @@ function Navbar() {
         <div className="navbar-container">
           <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
             MoodMusic&nbsp;
-            <i class=" fa-solid fa-music" />
+            <LibraryMusic color="white" fontSize="large" />
           </Link>
           <div className="menu-icon" onClick={handleClick}>
             <i className={click ? "fas fa-times" : "fas fa-bars"} />
           </div>
           <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">
-              <Link to="/" className="nav-links" onClick={closeMobileMenu}>
-                <i class=" fa-solid fa-camera" />
-                <CameraAltIcon color="primary" />
+              <Link
+                to="/camera"
+                className="nav-links"
+                onClick={closeMobileMenu}
+              >
+                <CameraAltIcon color="white" />
               </Link>
             </li>
             <li className="nav-item">
               <Link
-                to="/Playlists"
+                to="/upload"
                 className="nav-links"
                 onClick={closeMobileMenu}
               >
-                Playlists
+                <FileUpload color="white" />
               </Link>
             </li>
-            <li className="nav-item">
-              <Link
-                to="/products"
-                className="nav-links"
-                onClick={closeMobileMenu}
-              >
-                Products
-              </Link>
-            </li>
-
             <li>
               <Link
                 to="/sign-up"
@@ -72,7 +66,7 @@ function Navbar() {
               </Link>
             </li>
           </ul>
-          {button && <Button buttonStyle="btn--outline">SIGN UP</Button>}
+          {button && <Button buttonStyle="btn--outline">GET STARTED</Button>}
         </div>
       </nav>
     </>
