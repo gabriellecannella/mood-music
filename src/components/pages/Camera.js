@@ -1,6 +1,13 @@
 import React from "react";
 import "../../App.css";
+import CameraFeed from "../CameraFeed";
 
-export default function Camera() {
-  return <h1 className="camera">TAKE A PICTURE</h1>;
+function Camera() {
+  return(
+    <>
+      <CameraFeed />
+    </>
+  ); 
 }
+
+export default Camera;
