@@ -8,7 +8,7 @@ cors = CORS(app)
 
 @app.route('/songs', methods=['GET'])
 @cross_origin()
-def songs():
+def DataSort():
     user_mood = request.args.get('arg1').lower()
     # return Response("sucess", status=200, mimetype='application/json')
     DataFrame = pd.read_csv(r"data_moods.csv")
