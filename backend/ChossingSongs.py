@@ -6,8 +6,6 @@ from markupsafe import escape
 app = Flask(__name__)
 cors = CORS(app)
 
-
-
 @app.route('/songs', methods=['GET'])
 @cross_origin()
 def songs():
