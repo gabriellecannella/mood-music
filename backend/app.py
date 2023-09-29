@@ -1,4 +1,5 @@
 from flask import Flask, Response, request
+from camera import VideoCamera
 import pandas as pd
 from flask_cors import CORS, cross_origin
 from markupsafe import escape
@@ -16,3 +17,14 @@ def DataSort():
     DataFrame = DataFrame.sort_values(by="popularity", ascending=False)
     return Response(DataFrame[["name", "album", "artist", "id"]].to_json(orient='records'), status=200, mimetype='application/json')
 
+def gen(camera):
+    while True:
+        frame = camera.get_frame()
+        yield (b'--frame\r\n'
+               b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
+
+@app.route('/camera', methods=['GET'])
+@cross_origin()
+def video_feed():
+    return Response(gen(VideoCamera()),
+                    mimetype='multipart/x-mixed-replace; boundary=frame')

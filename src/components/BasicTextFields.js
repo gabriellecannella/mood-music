@@ -21,14 +21,8 @@ export default function BasicTextFields({ setRows }) {
       axios.get(`http://127.0.0.1:5000/songs?arg1=${inputValue}`)
         .then((response) => {
           const data = response.data;
-          
           setRows(data);
         })
-      // console.log("choosing song")
-
-      // await ChooseSongs(inputValue);
-      // Handle the Enter key press here
-      // alert(`You pressed Enter with input value: ${inputValue}`);
     }
   };
 
