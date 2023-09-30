@@ -3,7 +3,7 @@ import { Button } from "./Button";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
-import { FileUpload, LibraryMusic } from "@mui/icons-material";
+import { FileUpload, LibraryMusic, UploadFile } from "@mui/icons-material";
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -30,30 +30,31 @@ function Navbar() {
     <>
       <nav className="navbar">
         <div className="navbar-container">
-          <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-            MoodMusic&nbsp;
-            <LibraryMusic color="white" fontSize="large" />
+          <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+            <CameraAltIcon color="white" fontSize="large" />
           </Link>
-          <div className="menu-icon" onClick={handleClick}>
+          <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MOOD
+            MUSIC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </Link>
+
+          <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+            <UploadFile color="white" fontSize="large" />
+          </Link>
+
+          {/*  <div className="menu-icon" onClick={handleClick}>
             <i className={click ? "fas fa-times" : "fas fa-bars"} />
           </div>
           <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">
-              <Link
-                to="/camera"
-                className="nav-links"
-                onClick={closeMobileMenu}
-              >
-                <CameraAltIcon color="white" />
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                to="/upload"
-                className="nav-links"
-                onClick={closeMobileMenu}
-              >
-                <FileUpload color="white" />
+              <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+                <FileUpload color="white" fontSize="large" />
               </Link>
             </li>
             <li>
@@ -65,8 +66,7 @@ function Navbar() {
                 Sign Up
               </Link>
             </li>
-          </ul>
-          {button && <Button buttonStyle="btn--outline">GET STARTED</Button>}
+          </ul> */}
         </div>
       </nav>
     </>

@@ -70,4 +70,16 @@ video {
       width: 100%;
     }
   }
+
+  .image-container {
+    display: flex;
+    justify-content: center; /* Horizontally center the image */
+    align-items: center; /* Vertically center the image */
+    height: 100vh; /* Ensure the container spans the entire viewport height */
+  }
+  
+  .center-image {
+    max-width: 100%; /* Ensure the image doesn't exceed its container's width */
+    max-height: 100%; /* Ensure the image doesn't exceed its container's height */
+  }
   
