@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/pages/Home";
 import Upload from "./components/pages/Upload";
 import Camera from "./components/pages/Camera";
-import MoodWheel from "./components/pages/MoodWheel";
+import MoodWheel from "./components/MoodWheel";
 
 function App() {
   return (
