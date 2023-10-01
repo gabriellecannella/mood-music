@@ -17,21 +17,9 @@ def DataSort():
     DataFrame = DataFrame[DataFrame["mood"].str.lower() == user_mood]
     DataFrame = DataFrame.sort_values(by="popularity", ascending=False)
     return Response(DataFrame[["name", "album", "artist", "id"]].to_json(orient='records'), status=200, mimetype='application/json')
-"""
-def gen(camera):
-    while True:
-        frame = camera.get_frame()
-        yield (b'--frame\r\n'
-               b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
-
-@app.route('/camera', methods=['GET'])
-@cross_origin()
-def video_feed():
-    return Response(gen(VideoCamera()),
-                    mimetype='multipart/x-mixed-replace; boundary=frame')
-"""
+    
 # Route to access the camera feed
-@app.route('/camera')
+@app.route('/camera', methods=['GET'])
 def camera_feed():
     # Create an instance of VideoCamera
     root = tk.Tk()

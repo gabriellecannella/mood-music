@@ -70,17 +70,12 @@ class VideoCamera(object):
                 preds = self.emotion_classifier.predict(roi)[0]
                 emotion_probability = np.max(preds)
                 label = self.EMOTIONS[preds.argmax()]
-            
-           # for (i, (emotion, prob)) in enumerate(zip(self.EMOTIONS, preds)):
-                # construct the label text
-                #text = "{}: {:.2f}%".format(emotion, prob * 100)
-                #w = int(prob * 300)
-                #cv2.rectangle(probabilities, (7, (i * 35) + 5), (w, (i * 35) + 35), (0, 0, 255), -1)
-                #cv2.putText(self.frameClone, text, (10, (i * 35) + 23), cv2.FONT_HERSHEY_SIMPLEX, 0.45, (255, 255, 255), 2)
-                #cv2.putText(self.frameClone, label, (fX, fY - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.45, (0, 0, 255), 2)
-                #cv2.rectangle(self.frameClone, (fX, fY), (fX + fW, fY + fH), (0, 0, 255), 2)
-            cv2.putText(self.frameClone, label, (fX, fY - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.45, (0, 0, 255), 2)
-            cv2.rectangle(self.frameClone, (fX, fY), (fX + fW, fY + fH), (0, 0, 255), 2)
+               # for (i, (emotion, prob)) in enumerate(zip(self.EMOTIONS, preds)):
+                #    text = "{}: {:.2f}%".format(emotion, prob * 100)
+                 #   cv2.putText(self.frameClone, text, (10, (i * 35) + 23), cv2.FONT_HERSHEY_SIMPLEX, 0.45, (0, 0, 255), 2)
+                cv2.putText(self.frameClone, label, (fX, fY - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.45, (0, 0, 255), 2)
+                cv2.rectangle(self.frameClone, (fX, fY), (fX + fW, fY + fH), (0, 0, 255), 2)
+
             if ret:
                 self.photo = ImageTk.PhotoImage(image=Image.fromarray(cv2.cvtColor(self.frameClone, cv2.COLOR_BGR2RGB)))
                 self.canvas.create_image(0, 0, image=self.photo, anchor=tk.NW)
