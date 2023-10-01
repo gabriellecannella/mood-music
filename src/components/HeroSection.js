@@ -7,7 +7,7 @@ import { Button_Cam } from "./Button_Cam";
 function HeroSection() {
   return (
     <div className="hero-container">
-      <video src="/videos/design_A.mp4" autoPlay loop muted />
+      <video src="/videos/back-vid.mp4" autoPlay loop muted />
       <p>Place working Music Wheel below...</p>
       <div className="image-container">
         <img
