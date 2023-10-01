@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import CameraAltIcon from "@mui/icons-material/CameraAlt";
 
 export const CameraButton = () => {
   // Function to handle the button click
@@ -19,6 +20,8 @@ export const CameraButton = () => {
   };
 
   return (
-    <button onClick={sendGetRequest}>Open Camera</button>
+    <button onClick={sendGetRequest}>
+      <CameraAltIcon />
+    </button>
   );
 };
