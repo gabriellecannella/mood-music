@@ -7,7 +7,7 @@ video {
   }
   
   .camera-container {
-    /* background: url('/images/img-home.jpg') center center/cover no-repeat; */
+    /*background: url('/public/images/frames/face.png') center center/cover no-repeat;*/
     height: 100vh;
     width: 100%;
     display: flex;
@@ -69,5 +69,5 @@ video {
     .btn {
       width: 100%;
     }
-  }
+}
   
