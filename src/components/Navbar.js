@@ -31,7 +31,7 @@ function Navbar() {
     <>
       <nav className="navbar">
         <div className="navbar-container">
-          <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+          <Link to="/camera" className="nav-links" onClick={closeMobileMenu}>
             <CameraButton color="white" fontSize="large" />
           </Link> 
           <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
