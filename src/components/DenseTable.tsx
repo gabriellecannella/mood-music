@@ -36,7 +36,7 @@ import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 export default function DenseTable({ rows }) {
   return (
     <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
+      <Table sx={{ minWidth: 650}} size="small" aria-label="a dense table">
         <TableHead>
           <TableRow>
             <TableCell>Song</TableCell>
@@ -49,7 +49,7 @@ export default function DenseTable({ rows }) {
           {rows.map((row) => (
             <TableRow
               key={row.name}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+              sx={{ '&:last-child td, &:last-child th': { border: 1 } }}
             >
               <TableCell component="th" scope="row">
                 {row.name}
@@ -63,5 +63,6 @@ export default function DenseTable({ rows }) {
         </TableBody>
       </Table>
     </TableContainer>
+    
   );
 }
