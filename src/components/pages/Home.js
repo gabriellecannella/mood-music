@@ -4,11 +4,11 @@ import HeroSection from "../HeroSection";
 //import MoodWheel from "./MoodWheel";
 import Footer from "../Footer";
 import MoodWheel from "./MoodWheel";
-function Home() {
+function Home(mood) {
   return (
     <>
       <HeroSection />
-      <MoodWheel />
+      <MoodWheel mood={mood}/>
       <Footer />
     </>
   );

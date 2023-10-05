@@ -23,14 +23,18 @@ def DataSort():
 def process_image_endpoint():
     try:
         snapshot_file = request.files['snapshot']
+        print("dsdsddsndksndkasjdlkald")
         if snapshot_file:
+            print("dsdsd")
             # Save the snapshot to a specific path
             snapshot_path = 'pics/snapshot.jpg'
             snapshot_file.save(snapshot_path)
              # Call the image processing function
-            annotated_snapshot_path = process_image(snapshot_path)
+            annotated_snapshot_path, label = process_image(snapshot_path)
             # Return the annotated image
-            return send_file(annotated_snapshot_path, mimetype='image/jpeg')
+            print("going to show you")
+            print(label)
+            return Response(label, status=200, mimetype="text/plain") 
         else:
             return 'Snapshot file not found', 400
     except Exception as e:
