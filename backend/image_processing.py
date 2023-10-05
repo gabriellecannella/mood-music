@@ -59,7 +59,6 @@ def process_image(snapshot_path):
         # Save the annotated image with detection results
         cv2.imwrite(annotated_snapshot_path, image)
         # Return annotated image path
-        print("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
         print(label)
         return (annotated_snapshot_path,label)
     except Exception as e:
