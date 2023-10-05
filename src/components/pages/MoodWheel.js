@@ -1,5 +1,5 @@
 import "../../App.css";
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 //import Navbar from "./components/Navbar";
 //import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -7,8 +7,29 @@ import { useState } from "react";
 import BasicTextFields from "../BasicTextFields";
 import DenseTable from "../DenseTable.tsx";
 //import Slider from "@mui/material/Slider";
-export default function MoodWheel() {
+import axios from "axios";
+
+export default function MoodWheel({mood}) {
   const [rows, setRows] = useState([]);
+  const [genre, setGenre] = useState([]);
+
+
+  useEffect( () => {
+    console.log(mood.mood.label)
+        axios
+          .get(`http://127.0.0.1:5000/songs?arg1=${mood.mood.label}`)
+          .then((response) => {
+            const data = response.data;
+            try{
+              setGenre("Suggesting: "+ data[0].mood + " music")
+              setRows(data);
+            }
+            catch{
+              
+            }
+          });
+  }, [mood]);
+
   return (
     <>
       {/* <Router>
@@ -18,7 +39,7 @@ export default function MoodWheel() {
         </Routes>
       </Router>
       <Slider /> */}
-      <BasicTextFields setRows={ setRows } />
+      <BasicTextFields setRows={ setRows } mood= {mood} genre={genre}/>
       <DenseTable rows={ rows } />
     </>
   );

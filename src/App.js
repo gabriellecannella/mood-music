@@ -1,5 +1,5 @@
 import "./App.css";
-import React from "react";
+import React, { useState } from 'react';
 import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/pages/Home";
@@ -8,12 +8,13 @@ import Camera from "./components/pages/Camera";
 import MoodWheel from "./components/pages/MoodWheel";
 
 function App() {
+  const [mood, setMood] = useState("");
   return (
     <>
       <Router>
-        <Navbar />
+        <Navbar setMood= {setMood}/>
         <Routes>
-          <Route path="/" exact element={<Home></Home>}></Route>
+          <Route path="/" exact element={<Home mood = {mood}></Home>}></Route>
           <Route path="/camera" exact element={<Camera></Camera>}></Route>
           <Route path="/upload" exact element={<Upload></Upload>}></Route>
           <Route
