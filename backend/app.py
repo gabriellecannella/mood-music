@@ -9,12 +9,25 @@ import tkinter as tk
 app = Flask(__name__)
 cors = CORS(app)
 
+def choose_mood(pred_class):
+    if( pred_class=='disgust' ):
+        return 'sad' 
+    elif( pred_class=='happy' or pred_class=='sad' ):
+            return 'happy' 
+    elif( pred_class=='scared' or pred_class=='angry' ):
+            return 'calm' 
+    elif( pred_class=='surprised' or pred_class=='neutral' ):
+            return 'energetic'
+    else:
+        return pred_class
+    
 @app.route('/songs', methods=['GET'])
 @cross_origin()
 def DataSort():
     user_mood = request.args.get('arg1').lower()
-    # return Response("sucess", status=200, mimetype='application/json')
     DataFrame = pd.read_csv(r"data_moods.csv")
+    user_mood = choose_mood(user_mood) 
+    print("your mood now is:" + user_mood)
     DataFrame = DataFrame[DataFrame["mood"].str.lower() == user_mood]
     DataFrame = DataFrame.sort_values(by="popularity", ascending=False)
     return Response(DataFrame[["name", "album", "artist", "id"]].to_json(orient='records'), status=200, mimetype='application/json')
@@ -23,14 +36,18 @@ def DataSort():
 def process_image_endpoint():
     try:
         snapshot_file = request.files['snapshot']
+        print("dsdsddsndksndkasjdlkald")
         if snapshot_file:
+            print("dsdsd")
             # Save the snapshot to a specific path
             snapshot_path = 'pics/snapshot.jpg'
             snapshot_file.save(snapshot_path)
              # Call the image processing function
-            annotated_snapshot_path = process_image(snapshot_path)
+            annotated_snapshot_path, label = process_image(snapshot_path)
             # Return the annotated image
-            return send_file(annotated_snapshot_path, mimetype='image/jpeg')
+            print("going to show you")
+            print(label)
+            return Response(label, status=200, mimetype="text/plain") 
         else:
             return 'Snapshot file not found', 400
     except Exception as e:

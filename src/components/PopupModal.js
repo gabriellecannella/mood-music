@@ -3,9 +3,14 @@ import "./PopupModal.css";
 import CameraComponent from './CameraComponent';
 
 class PopupModal extends Component {
-  state = {
-    showModal: false,
-  };
+  constructor(props) {
+    super(props);
+
+    // Use the props to initialize the initial state
+    this.state = {
+      showModal: props.showModal || false,
+    };
+  } 
 
   openModal = () => {
     this.setState({ showModal: true });
@@ -19,13 +24,15 @@ class PopupModal extends Component {
     return (
       <div>
         <button onClick={this.openModal}>Open Popup</button>
-        {this.state.showModal && (
+        { this.state.showModal && (
           <div className="modal">
             <div className="modal-content">
               <span className="close" onClick={this.closeModal}>
                 &times;
               </span>
-              < CameraComponent/>
+              <div className = "selectedCamera">
+              < CameraComponent />
+              </div>
             </div>
           </div>
         )}

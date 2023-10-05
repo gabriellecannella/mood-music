@@ -30,3 +30,8 @@
     padding: 10px;
     cursor: pointer;
   }
+  .selectedCamera{
+    position: relative;
+    top: -202px;
+    left: -201px;
+}

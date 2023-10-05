@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import Webcam from 'react-webcam';
 import "./CameraComponent.css"
 
-const CameraComponent = () => {
+const CameraComponent = ({setMood, setModal}) => {
   const webcamRef = useRef(null);
   const [isCameraOn, setIsCameraOn] = useState(false);
   const [videoDevices, setVideoDevices] = useState([]);
@@ -56,18 +56,28 @@ const CameraComponent = () => {
     formData.append('snapshot', dataURItoBlob(imageSrc));
 
     try {
-      const response = await fetch('/camera', {
+      const response = await fetch('http://127.0.0.1:5000/camera', {
         method: 'POST',
         body: formData,
-      });
+      }).then((response) =>{ 
 
-      if (response.ok) {
-        const imageBlob = await response.blob();
-        setAnnotatedSnapshot(URL.createObjectURL(imageBlob));
+        if (response.ok) {
+          const label = response.text().then((label) => {
+            console.log({label});
+            setModal(false)
+            setMood({label});
+
+          }
+            )
+
+        // const imageBlob = await response.blob();
+        // setAnnotatedSnapshot(URL.createObjectURL(imageBlob));
       } else {
         console.error('Error processing snapshot on the server');
       }
+    })
     } catch (error) {
+      console.log("noo"); 
       console.error('Error sending snapshot to the server:', error);
     }
   };

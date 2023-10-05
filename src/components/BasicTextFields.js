@@ -6,8 +6,9 @@ import TextField from "@mui/material/TextField";
 
 import axios from "axios";
 
-export default function BasicTextFields({ setRows }) {
+export default function BasicTextFields({ setRows,  mood }) {
   const [inputValue, setInputValue] = useState("");
+
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
@@ -35,6 +36,7 @@ export default function BasicTextFields({ setRows }) {
   return (
     <div>
       <h1>Type how youre feeling</h1>
+      <h2>{mood.mood.label}</h2>
       <Box
         component="form"
         sx={{
