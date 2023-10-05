@@ -1,8 +1,6 @@
 import React from "react";
 import "../App.css";
-import { Button } from "./Button";
 import "./HeroSection.css";
-import { Button_Cam } from "./Button_Cam";
 
 function HeroSection() {
   return (

@@ -5,13 +5,10 @@ import "./Navbar.css";
 import { FileUpload, LibraryMusic, UploadFile } from "@mui/icons-material";
 import { CameraButton } from './CameraButton';
 import PopupModal from "./PopupModal";
-import MyPopup from "./MyPopup";
+import MyPopup from "./PopupModal";
 import { useDropzone } from 'react-dropzone';
 
 function Navbar({setMood}) {
-
-
-
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
 
