@@ -14,9 +14,9 @@ def choose_mood(pred_class):
         return 'sad' 
     elif( pred_class=='happy' or pred_class=='sad' ):
             return 'happy' 
-    elif( pred_class=='fear' or pred_class=='angry' ):
+    elif( pred_class=='scared' or pred_class=='angry' ):
             return 'calm' 
-    elif( pred_class=='surprise' or pred_class=='neutral' ):
+    elif( pred_class=='surprised' or pred_class=='neutral' ):
             return 'energetic'
     else:
         return pred_class
