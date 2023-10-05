@@ -4,7 +4,7 @@ import "./CameraComponent.css"
 
 const CameraComponent = ({setMood, setModal}) => {
   const webcamRef = useRef(null);
-  const [isCameraOn, setIsCameraOn] = useState(false);
+  const [isCameraOn, setIsCameraOn] = useState(true);
   const [videoDevices, setVideoDevices] = useState([]);
   const [selectedDeviceId, setSelectedDeviceId] = useState(null);
   const [snapshot, setSnapshot] = useState(null);
@@ -132,12 +132,6 @@ const CameraComponent = ({setMood, setModal}) => {
               </option>
             ))}
           </select>
-          <button onClick={startCamera} disabled={isCameraOn}>
-            Start Camera
-          </button>
-          <button onClick={stopCamera} disabled={!isCameraOn}>
-            Stop Camera
-          </button>
           <button onClick={takeSnapshot} disabled={!isCameraOn}>
             Take Snapshot
           </button>

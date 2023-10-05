@@ -17,9 +17,9 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: white;
+    background-color: black;
     padding: 200px;
-    border: 1px solid #ccc;
+    border: 1px solid #000000;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   }
   
@@ -32,6 +32,6 @@
   }
   .selectedCamera{
     position: relative;
-    top: -202px;
-    left: -201px;
+    top: -200px;
+    left: -200px;
 }

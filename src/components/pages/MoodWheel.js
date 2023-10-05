@@ -11,14 +11,21 @@ import axios from "axios";
 
 export default function MoodWheel({mood}) {
   const [rows, setRows] = useState([]);
+  const [genre, setGenre] = useState([]);
+
 
   useEffect( () => {
         axios
           .get(`http://127.0.0.1:5000/songs?arg1=${mood.mood.label}`)
           .then((response) => {
             const data = response.data;
-  
-            setRows(data);
+            try{
+              setGenre("Suggesting: "+ data[0].mood + " music")
+              setRows(data);
+            }
+            catch{
+              
+            }
           });
   }, [mood]);
 
@@ -31,7 +38,7 @@ export default function MoodWheel({mood}) {
         </Routes>
       </Router>
       <Slider /> */}
-      <BasicTextFields setRows={ setRows } mood= {mood} />
+      <BasicTextFields setRows={ setRows } mood= {mood} genre={genre}/>
       <DenseTable rows={ rows } />
     </>
   );
