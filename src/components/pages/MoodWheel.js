@@ -15,7 +15,6 @@ export default function MoodWheel({mood}) {
 
 
   useEffect( () => {
-    console.log(mood.mood.label)
         axios
           .get(`http://127.0.0.1:5000/songs?arg1=${mood.mood.label}`)
           .then((response) => {
