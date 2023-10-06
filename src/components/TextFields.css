@@ -1,0 +1,17 @@
+/* Center the text horizontally and vertically */
+.centered-text {
+  background-color: rgba(0, 0, 0, 0.5); /* Use rgba to specify transparency */
+  text-align: center; /* Center the text horizontally within the box */
+
+  color: #fff;
+  justify-self: start;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 2rem;
+
+  display: flex;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  }
+  

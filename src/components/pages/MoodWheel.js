@@ -16,7 +16,7 @@ export default function MoodWheel({mood}) {
           .then((response) => {
             const data = response.data;
             try{
-              setGenre("Suggesting: "+ data[0].mood + " music")
+              setGenre(data[0].mood.toLowerCase())
               setRows(data);
             }
             catch{

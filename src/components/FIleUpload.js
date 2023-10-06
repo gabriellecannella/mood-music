@@ -15,7 +15,6 @@ function FileUpload() {
   return (
     <div {...getRootProps()} className="dropzone">
       <input {...getInputProps()} />
-      <p>Drag & drop files here, or click to select files</p>
     </div>
   );
 }
