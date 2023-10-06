@@ -2,7 +2,7 @@
 In the project directory, you can run:
 ### `py run.py`
 
-##or
+or
 
 In the project directory, you can run:
 ### `npm start`
