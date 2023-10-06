@@ -1,10 +1,10 @@
 # MOOD MUSIC
 In the project directory, you can run:
-
-### `py run_app.py`
+### `py run.py`
 
 or
 
+In the project directory, you can run:
 ### `npm start`
 and in a new terminal
 ### `cd backend && py app.y`
