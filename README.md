@@ -1,3 +1,4 @@
+# MOOD MUSIC
 In the project directory, you can run:
 
 ### `py run_app.py`
