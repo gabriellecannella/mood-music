@@ -1,28 +1,70 @@
 .mood-wheel {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: 300px; /* Adjust the size as needed */
-    height: 300px; /* Adjust the size as needed */
-    border: 2px solid #333;
-    border-radius: 50%;
-    overflow: hidden;
-  }
-  
-  .emotion {
-    width: 50%;
-    height: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .emotion.selected {
-    background-color: #007bff; /* Highlight color for the selected mood */
-    color: white; /* Text color for the selected mood */
-  }
-  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 550px; /* Adjust the size as needed */
+  height: 550px; /* Adjust the size as needed */
+  border: 5px solid #333;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto; /* Center the wheel horizontally */
+}
+
+.outer-ring {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  height: 50%;
+  padding: 10px; /* Add padding to offset the edge of the text */
+  box-sizing: border-box; /* Include padding in the width and height */
+}
+
+.inner-round {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50%;
+  padding: 10px; /* Add padding to offset the edge of the text */
+  box-sizing: border-box; /* Include padding in the width and height */
+}
+
+.outer-emotion {
+  width: 30%;
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 50%;
+  color: black; /* Set the text color to black */
+}
+
+.inner-emotion {
+  width: 15%;
+  height: 15%;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 50%;
+  color: black; /* Set the text color to black */
+}
+
+.outer-emotion.selected {
+  background-color: #007bff; /* Highlight color for the selected outer mood */
+  color: white; /* Text color for the selected outer mood */
+}
+
+.inner-emotion.selected {
+  background-color: #007bff; /* Highlight color for the selected inner mood */
+  color: white; /* Text color for the selected inner mood */
+}
