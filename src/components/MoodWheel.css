@@ -1,38 +1,25 @@
-.mood-wheel {
+.mood-container {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 550px; /* Adjust the size as needed */
   height: 550px; /* Adjust the size as needed */
   border: 5px solid #333;
   border-radius: 50%;
-  overflow: hidden;
   margin: 0 auto; /* Center the wheel horizontally */
+  position: relative; /* Add this to allow absolute positioning of moods */
 }
 
-.outer-ring {
+.mood-circle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 80%;
-  height: 50%;
-  padding: 10px; /* Add padding to offset the edge of the text */
-  box-sizing: border-box; /* Include padding in the width and height */
-}
-
-.inner-round {
-  display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 50%;
-  padding: 10px; /* Add padding to offset the edge of the text */
-  box-sizing: border-box; /* Include padding in the width and height */
 }
 
-.outer-emotion {
+.outer-mood {
   width: 30%;
   height: 30%;
   display: flex;
@@ -43,28 +30,40 @@
   transition: background-color 0.3s ease;
   border-radius: 50%;
   color: black; /* Set the text color to black */
+  position: absolute;
+  transform-origin: center center;
 }
 
-.inner-emotion {
-  width: 15%;
-  height: 15%;
-  margin: 10px;
+.inner-mood {
+  width: 10%; /* Adjust the width to make the inner circle tighter */
+  height: 10%; /* Maintain aspect ratio */
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 12px;
+  font-size: 14px;
   cursor: pointer;
   transition: background-color 0.3s ease;
   border-radius: 50%;
   color: black; /* Set the text color to black */
+  position: absolute;
+  transform-origin: center center;
 }
 
-.outer-emotion.selected {
-  background-color: #007bff; /* Highlight color for the selected outer mood */
-  color: white; /* Text color for the selected outer mood */
+/* Rotate the inner moods to be correctly oriented */
+.inner-mood:nth-child(2) {
+  transform: rotate(30deg) translateX(90px); /* Adjust the values as needed */
 }
 
-.inner-emotion.selected {
-  background-color: #007bff; /* Highlight color for the selected inner mood */
-  color: white; /* Text color for the selected inner mood */
+.inner-mood:nth-child(3) {
+  transform: rotate(60deg) translateX(90px); /* Adjust the values as needed */
+}
+
+
+.selected-mood-text {
+  position: absolute;
+  bottom: -70px; /* Adjust the distance from the bottom as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center; /* Center-align the text */
+  width: 100%; /* Make sure it spans the entire width */
 }
