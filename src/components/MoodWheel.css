@@ -58,11 +58,10 @@
   transform: rotate(60deg) translateX(90px); /* Adjust the values as needed */
 }
 
-
 .selected-mood-text {
   position: absolute;
-  bottom: -70px; /* Adjust the distance from the bottom as needed */
-  left: 50%;
+  bottom: 250px; /* Adjust the distance from the bottom as needed */
+  left: 120%;
   transform: translateX(-50%);
   text-align: center; /* Center-align the text */
   width: 100%; /* Make sure it spans the entire width */
