@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './MoodWheel.css'; // Import your CSS file
 
-const MoodWheel = () => {
+const MoodWheel = ({setMood}) => {
   const [selectedOuterMood, setSelectedOuterMood] = useState(null);
   const [selectedInnerMood, setSelectedInnerMood] = useState(null);
 
@@ -45,11 +45,14 @@ const MoodWheel = () => {
   ];
 
   const handleOuterMoodSelect = (outerEmotion) => {
+    
+    setMood(outerEmotion)
     setSelectedOuterMood(outerEmotion);
     setSelectedInnerMood(null); // Reset the inner mood when the outer mood changes
   };
 
   const handleInnerMoodSelect = (innerEmotion) => {
+
     setSelectedInnerMood(innerEmotion);
   };
 

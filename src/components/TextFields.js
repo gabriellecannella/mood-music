@@ -6,7 +6,7 @@ export default function TextFields({ setRows,  mood, genre }) {
   return (
     <div>
       <h2 className="centered-text" >
-        Your mood is: {mood.mood.label}
+        Your mood is: {mood}
         </h2>
       <h1 className="centered-text" >
       Suggesting: {genre} music

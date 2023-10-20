@@ -14,7 +14,7 @@ function App() {
       <Router>
         <Navbar setMood= {setMood}/>
         <Routes>
-          <Route path="/" exact element={<Home mood = {mood}></Home>}></Route>
+          <Route path="/" exact element={<Home mood = {mood} setMood = {setMood}></Home>}></Route>
           <Route path="/camera" exact element={<Camera></Camera>}></Route>
           <Route path="/upload" exact element={<Upload></Upload>}></Route>
           <Route
