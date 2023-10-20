@@ -34,30 +34,6 @@
   transform-origin: center center;
 }
 
-.inner-mood {
-  width: 10%; /* Adjust the width to make the inner circle tighter */
-  height: 10%; /* Maintain aspect ratio */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  border-radius: 50%;
-  color: black; /* Set the text color to black */
-  position: absolute;
-  transform-origin: center center;
-}
-
-/* Rotate the inner moods to be correctly oriented */
-.inner-mood:nth-child(2) {
-  transform: rotate(30deg) translateX(90px); /* Adjust the values as needed */
-}
-
-.inner-mood:nth-child(3) {
-  transform: rotate(60deg) translateX(90px); /* Adjust the values as needed */
-}
-
 .selected-mood-text {
   position: absolute;
   bottom: 250px; /* Adjust the distance from the bottom as needed */
