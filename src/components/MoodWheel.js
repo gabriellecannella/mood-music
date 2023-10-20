@@ -86,20 +86,6 @@ const MoodWheel = ({setMood}) => {
             .inner.map((innerEmotion, index) => {
               const isSelected = selectedInnerMood === innerEmotion;
               const rotation = (index * (360 / 3)) + 30;
-
-              return (
-                <div
-                  key={index}
-                  className={`mood inner-mood ${isSelected ? 'selected' : ''}`}
-                  onClick={() => handleInnerMoodSelect(innerEmotion)}
-                  style={{
-                    backgroundColor: moodData.find((data) => data.outer === selectedOuterMood).color,
-                    transform: `rotate(${rotation}deg) translateX(60px)`, // Adjust translateX value
-                  }}
-                >
-                  {innerEmotion}
-                </div>
-              );
             })}
       </div>
       <div className="selected-mood-text">
