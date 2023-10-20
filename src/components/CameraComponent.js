@@ -65,7 +65,7 @@ const CameraComponent = ({setMood, setModal}) => {
           const label = response.text().then((label) => {
             console.log({label});
             setModal(false)
-            setMood({label});
+            setMood(label);
 
           }
             )

@@ -7,11 +7,11 @@ import MoodWheel from "./MoodWheel";
 import FileUpload from "../FIleUpload";
 
 // import { FileUpload } from "@mui/icons-material";
-function Home(mood) {
+function Home({mood, setMood}) {
   return (
     <>
       <FileUpload />
-      <HeroSection />
+      <HeroSection setMood = {setMood}/>
       <MoodWheel mood={mood}/>
       <Footer />
     </>
