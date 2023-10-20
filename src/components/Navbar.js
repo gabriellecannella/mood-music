@@ -35,9 +35,7 @@ function Navbar({setMood}) {
 
         if (response.ok) {
           const label = response.text().then((label) => {
-            console.log({label});
-            setMood({label});
-
+            setMood(label);
           }
             )
 
