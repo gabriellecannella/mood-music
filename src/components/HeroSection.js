@@ -6,7 +6,7 @@ import MoodWheel from "./MoodWheel";
 function HeroSection() {
   return (
     <div className="hero-container">
-      <video src="/videos/back-vid2.mp4" autoPlay loop muted />
+      <video src="/videos/Back-vid.mp4" autoPlay loop muted />
       <p>Place working Music Wheel below...</p>
       <div className="image-container">
         <MoodWheel />

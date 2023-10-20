@@ -20,7 +20,6 @@ export default function MoodWheel({mood}) {
               setRows(data);
             }
             catch{
-              
             }
           });
   }, [mood]);
