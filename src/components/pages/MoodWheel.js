@@ -8,6 +8,11 @@ import axios from "axios";
 export default function MoodWheel({mood}) {
   const [rows, setRows] = useState([]);
   const [genre, setGenre] = useState([]);
+  useEffect(() => {
+    if (rows.length > 0) {
+      window.scrollTo({ top: 740, behavior: "smooth" });
+    }
+  }, [rows]);
 
 
   useEffect( () => {
@@ -18,9 +23,9 @@ export default function MoodWheel({mood}) {
             try{
               setGenre(data[0].mood.toLowerCase())
               setRows(data);
-              window.scrollTo({ top: 740, behavior: "smooth" });
             }
             catch{
+              
             }
           });
   }, [mood]);

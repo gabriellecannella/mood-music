@@ -7,7 +7,6 @@ function HeroSection({setMood}) {
   return (
     <div className="hero-container">
       <video src="/videos/Back-vid.mp4" autoPlay loop muted />
-      <p>Place working Music Wheel below...</p>
       <div className="image-container">
         <MoodWheel setMood= {setMood}/>
       </div>
