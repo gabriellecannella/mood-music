@@ -45,10 +45,9 @@ const MoodWheel = ({setMood}) => {
   ];
 
   const handleOuterMoodSelect = (outerEmotion) => {
-    
     setMood(outerEmotion)
     setSelectedOuterMood(outerEmotion);
-    setSelectedInnerMood(null); // Reset the inner mood when the outer mood changes
+    //setSelectedInnerMood(null); // Reset the inner mood when the outer mood changes
   };
 
   const handleInnerMoodSelect = (innerEmotion) => {
@@ -64,7 +63,7 @@ const MoodWheel = ({setMood}) => {
       <div className="mood-circle">
         {moodData.map((data, index) => {
           const isSelected = selectedOuterMood === data.outer;
-          const rotation = (index - selectedMoodIndex) * (360 / moodData.length);
+          const rotation = (index) * (360 / moodData.length);
 
           return (
             <div
@@ -87,20 +86,6 @@ const MoodWheel = ({setMood}) => {
               const isSelected = selectedInnerMood === innerEmotion;
               const rotation = (index * (360 / 3)) + 30;
             })}
-      </div>
-      <div className="selected-mood-text">
-        <p>Selected Mood:</p>
-        <p
-          style={{
-            color: moodData.find((data) => data.outer === selectedOuterMood)?.color,
-            fontSize: '24px', // Increase font size for the key
-            textAlign: 'center', // Center-align the text
-          }}
-        >
-          {selectedOuterMood && selectedInnerMood
-            ? `${selectedOuterMood}:${selectedInnerMood}`
-            : selectedOuterMood || 'None'}
-        </p>
       </div>
     </div>
   );
