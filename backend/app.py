@@ -8,9 +8,9 @@ cors = CORS(app)
 DataFrame = pd.read_csv(r"data_moods.csv")
 
 def choose_genre(pred_class):
-    if( pred_class=='disgust' ):
+    if( pred_class=='disgust' or pred_class=='sad'):
         return 'sad' 
-    elif( pred_class=='happy' or pred_class=='sad' ):
+    elif( pred_class=='happy'):
             return 'happy' 
     elif( pred_class=='scared' or pred_class=='angry' ):
             return 'calm' 
