@@ -4,14 +4,15 @@ import { Button } from "./Button";
 import "./HeroSection.css";
 import { Button_Cam } from "./Button_Cam";
 import MoodWheel from "./MoodWheel";
+import MUIPieChart from "./PieChart";
+import CustomPieChart from "./PieChart";
 
 function HeroSection() {
   return (
     <div className="hero-container">
       <video src="/videos/back-vid2.mp4" autoPlay loop muted />
-      <p>Place working Music Wheel below...</p>
       <div className="image-container">
-        <MoodWheel />
+        <CustomPieChart />
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import './MoodWheel.css'; // Import your CSS file
+import React, { useState } from "react";
+import "./MoodWheel.css"; // Import your CSS file
 
 const MoodWheel = () => {
   const [selectedOuterMood, setSelectedOuterMood] = useState(null);
@@ -7,39 +7,39 @@ const MoodWheel = () => {
 
   const moodData = [
     {
-      outer: 'Happy',
-      inner: ['Playful', 'Proud', 'Calm'],
-      color: '#FFD700', // Mood-specific text color (yellow for Happy)
+      outer: "Happy",
+      inner: ["Playful", "Proud", "Calm"],
+      color: "#FFD700", // Mood-specific text color (yellow for Happy)
     },
     {
-      outer: 'Sad',
-      inner: ['Melancholic', 'Lonely', 'Despairing'],
-      color: '#87CEEB', // Mood-specific text color (blue for Sad)
+      outer: "Sad",
+      inner: ["Melancholic", "Lonely", "Despairing"],
+      color: "#87CEEB", // Mood-specific text color (blue for Sad)
     },
     {
-      outer: 'Surprised',
-      inner: ['Energetic', 'Thrilled', 'Excited'],
-      color: '#FFA500', // Orange for Excited (adjust as needed)
+      outer: "Surprised",
+      inner: ["Energetic", "Thrilled", "Excited"],
+      color: "#FFA500", // Orange for Excited (adjust as needed)
     },
     {
-      outer: 'Neutral',
-      inner: ['Relaxed', 'Content', 'Tranquil'],
-      color: '#008000', // Mood-specific text color (green for Calm)
+      outer: "Neutral",
+      inner: ["Relaxed", "Content", "Tranquil"],
+      color: "#008000", // Mood-specific text color (green for Calm)
     },
     {
-      outer: 'Angry',
-      inner: ['Furious', 'Irritated', 'Frustrated'],
-      color: '#FF0000', // Mood-specific text color (red for Angry)
+      outer: "Angry",
+      inner: ["Furious", "Irritated", "Frustrated"],
+      color: "#FF0000", // Mood-specific text color (red for Angry)
     },
     {
-      outer: 'Scared',
-      inner: ['Nervous', 'Fearful', 'Worried'],
-      color: '#660099', // Mood-specific text color (purple for Scared)
+      outer: "Scared",
+      inner: ["Nervous", "Fearful", "Worried"],
+      color: "#660099", // Mood-specific text color (purple for Scared)
     },
     {
-      outer: 'Disgust',
-      inner: ['Shock', 'Appalled', 'Annoyed'],
-      color: '#996633', // Mood-specific text color (brown/green for Disgust)
+      outer: "Disgust",
+      inner: ["Shock", "Appalled", "Annoyed"],
+      color: "#996633", // Mood-specific text color (brown/green for Disgust)
     },
     // Add more outer and inner emotions as needed
   ];
@@ -54,19 +54,22 @@ const MoodWheel = () => {
   };
 
   // Calculate the selected mood's index
-  const selectedMoodIndex = moodData.findIndex((data) => data.outer === selectedOuterMood);
+  const selectedMoodIndex = moodData.findIndex(
+    (data) => data.outer === selectedOuterMood
+  );
 
   return (
     <div className="mood-container">
-      <div className="mood-circle">
+      <div className="mood- ">
         {moodData.map((data, index) => {
           const isSelected = selectedOuterMood === data.outer;
-          const rotation = (index - selectedMoodIndex) * (360 / moodData.length);
+          const rotation =
+            (index - selectedMoodIndex) * (360 / moodData.length);
 
           return (
             <div
               key={index}
-              className={`mood outer-mood ${isSelected ? 'selected' : ''}`}
+              className={`mood outer-mood ${isSelected ? "selected" : ""}`}
               onClick={() => handleOuterMoodSelect(data.outer)}
               style={{
                 backgroundColor: data.color,
@@ -82,15 +85,17 @@ const MoodWheel = () => {
             .find((data) => data.outer === selectedOuterMood)
             .inner.map((innerEmotion, index) => {
               const isSelected = selectedInnerMood === innerEmotion;
-              const rotation = (index * (360 / 3)) + 30;
+              const rotation = index * (360 / 3) + 30;
 
               return (
                 <div
                   key={index}
-                  className={`mood inner-mood ${isSelected ? 'selected' : ''}`}
+                  className={`mood inner-mood ${isSelected ? "selected" : ""}`}
                   onClick={() => handleInnerMoodSelect(innerEmotion)}
                   style={{
-                    backgroundColor: moodData.find((data) => data.outer === selectedOuterMood).color,
+                    backgroundColor: moodData.find(
+                      (data) => data.outer === selectedOuterMood
+                    ).color,
                     transform: `rotate(${rotation}deg) translateX(60px)`, // Adjust translateX value
                   }}
                 >
@@ -103,14 +108,15 @@ const MoodWheel = () => {
         <p>Selected Mood:</p>
         <p
           style={{
-            color: moodData.find((data) => data.outer === selectedOuterMood)?.color,
-            fontSize: '24px', // Increase font size for the key
-            textAlign: 'center', // Center-align the text
+            color: moodData.find((data) => data.outer === selectedOuterMood)
+              ?.color,
+            fontSize: "24px", // Increase font size for the key
+            textAlign: "center", // Center-align the text
           }}
         >
           {selectedOuterMood && selectedInnerMood
             ? `${selectedOuterMood}:${selectedInnerMood}`
-            : selectedOuterMood || 'None'}
+            : selectedOuterMood || "None"}
         </p>
       </div>
     </div>

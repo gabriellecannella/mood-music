@@ -8,6 +8,7 @@
   border-radius: 50%;
   margin: 0 auto; /* Center the wheel horizontally */
   position: relative; /* Add this to allow absolute positioning of moods */
+  background-color: white; /* Add a white background */
 }
 
 .mood-circle {
@@ -65,4 +66,52 @@
   transform: translateX(-50%);
   text-align: center; /* Center-align the text */
   width: 100%; /* Make sure it spans the entire width */
+}
+
+.mood-triangle {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.mood-triangle div {
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Styling for specific emotions with colors */
+.mood-happy {
+  border-bottom: 100px solid #FFD700; /* Yellow for Happy */
+}
+
+.mood-sad {
+  border-bottom: 100px solid #87CEEB; /* Blue for Sad */
+}
+
+.mood-surprised {
+  border-bottom: 100px solid #FFA500; /* Orange for Surprised */
+}
+
+.mood-neutral {
+  border-bottom: 100px solid #008000; /* Green for Neutral */
+}
+
+.mood-angry {
+  border-bottom: 100px solid #FF0000; /* Red for Angry */
+}
+
+.mood-scared {
+  border-bottom: 100px solid #660099; /* Purple for Scared */
+}
+
+.mood-disgust {
+  border-bottom: 100px solid #996633; /* Brown/Green for Disgust */
 }
