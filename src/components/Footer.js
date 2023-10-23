@@ -9,19 +9,10 @@ function Footer() {
     <div className="footer-container">
       <section className="footer-subscription">
         <p className="footer-subscription-heading">
-          Create custom playlists designed by you for you
+          Create custom playlists designed by how you feel
         </p>
         <p className="footer-subscription-text">Start listening today</p>
         <div className="input-areas">
-          <form>
-            <input
-              className="footer-input"
-              name="email"
-              type="email"
-              placeholder="Your Email"
-            />
-            <Button buttonStyle="btn--outline">Subscribe</Button>
-          </form>
         </div>
       </section>
       <section class="social-media">
