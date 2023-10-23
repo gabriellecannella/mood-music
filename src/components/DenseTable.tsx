@@ -13,9 +13,9 @@ export default function StyledTable({ rows }) {
       <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
         <TableHead>
         <TableRow style={{ background: '#4ac776' }}>
-            <TableCell style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'white' }}>Song</TableCell>
-            <TableCell align="center" style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'white' }}>Artist</TableCell>
-            <TableCell align="center" style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'white' }}>Album</TableCell>
+            <TableCell align="left"  style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'white' }}>Song</TableCell>
+            <TableCell align="left" style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'white' }}>Artist</TableCell>
+            <TableCell align="left" style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'white' }}>Album</TableCell>
             <TableCell align="center" style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'white' }}>Play Song</TableCell>
           </TableRow>
         </TableHead>
@@ -25,9 +25,9 @@ export default function StyledTable({ rows }) {
               key={row.name}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
-              <TableCell component="th" scope="row" style={{ fontSize: '1.2rem', color: 'black' }}> {row.name} </TableCell>
-              <TableCell align="center"style={{ fontSize: '1.2rem', color: 'black' }}>{row.artist}</TableCell>
-              <TableCell align="center"style={{ fontSize: '1.2rem', color: 'black' }}>{row.album}</TableCell>
+              <TableCell align="left" component="th" scope="row" style={{ fontSize: '1.2rem', color: 'black' }}> {row.name} </TableCell>
+              <TableCell align="left"style={{ fontSize: '1.2rem', color: 'black' }}>{row.artist}</TableCell>
+              <TableCell align="left"style={{ fontSize: '1.2rem', color: 'black' }}>{row.album}</TableCell>
               <TableCell align="center">
                 <button style={{ background: 'none', border: '0px solid #4ac776', cursor: 'pointer' }} onClick={() => { window.open('https://open.spotify.com/track/' + row.id) }}>
                   <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24">
