@@ -1,18 +1,14 @@
 import React from "react";
 import "../App.css";
-import { Button } from "./Button";
 import "./HeroSection.css";
-import { Button_Cam } from "./Button_Cam";
-import MoodWheel from "./MoodWheel";
-import MUIPieChart from "./PieChart";
 import CustomPieChart from "./PieChart";
 
-function HeroSection() {
+function HeroSection({setMood}) {
   return (
     <div className="hero-container">
-      <video src="/videos/back-vid2.mp4" autoPlay loop muted />
+      <video src="/videos/Back-vid.mp4" autoPlay loop muted />
       <div className="image-container">
-        <CustomPieChart />
+        <CustomPieChart setMood = {setMood}/>
       </div>
     </div>
   );
