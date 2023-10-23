@@ -20,8 +20,6 @@
   
   .navbar-logo {
     color: #fff;
-    justify-self: start;
-    margin-left: 20px;
     cursor: pointer;
     text-decoration: none;
     font-size: 2rem;
@@ -50,7 +48,7 @@
   }
   
   .nav-links {
-    color: #fff;
+    color: #ffffff;
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -117,7 +115,7 @@
       position: absolute;
       top: 0;
       left: 0;
-      transform: translate(25%, 50%);
+      transform: translate(50%, 50%);
     }
   
     .menu-icon {
