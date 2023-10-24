@@ -29,11 +29,12 @@ export default function MoodWheel({mood}) {
             }
           });
   }, [mood]);
-
-  return (
-    <>
-      <TextFields setRows={ setRows } mood= {mood} genre={genre}/>
-      <DenseTable rows={ rows } />
-    </>
-  );
+  if(mood){
+    return (
+      <>
+        <TextFields setRows={ setRows } mood= {mood} genre={genre}/>
+        <DenseTable rows={ rows } />
+      </>
+    );
+  }
 }
