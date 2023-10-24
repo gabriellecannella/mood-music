@@ -5,7 +5,7 @@ import TextFields from "../TextFields";
 import DenseTable from "../DenseTable.tsx";
 import axios from "axios";
 
-export default function MoodWheel({mood}) {
+export default function MoodWheel({mood, accessToken}) {
   const [rows, setRows] = useState([]);
   const [genre, setGenre] = useState([]);
   useEffect(() => {
@@ -32,8 +32,8 @@ export default function MoodWheel({mood}) {
 
   return (
     <>
-      <TextFields setRows={ setRows } mood= {mood} genre={genre}/>
-      <DenseTable rows={ rows } />
+      <TextFields setRows={ setRows } mood= {mood} genre={genre} />
+      <DenseTable rows={ rows } accessToken={accessToken}/>
     </>
   );
 }

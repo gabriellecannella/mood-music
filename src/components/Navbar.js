@@ -5,6 +5,7 @@ import { UploadFile } from "@mui/icons-material";
 import { CameraButton } from './CameraButton';
 import MyPopup from "./PopupModal";
 import { useDropzone } from 'react-dropzone';
+import SpotifyLoginButton from './SpotifyLoginButton';
 
 function Navbar({ setMood }) {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -54,25 +55,23 @@ function Navbar({ setMood }) {
   return (
     <>
       <MyPopup showModal={isModalOpen} setModal={setModalOpen} setMood={setMood} />
-
       <nav className="navbar">
         <div className="navbar-container">
           <Link className="nav-links" onClick={toggleModal}>
             <CameraButton color="white" fontSize="large" />
           </Link>
-          <Link to="/" className="navbar-logo">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            MOOD MUSIC
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </Link>
           <Link className="nav-links" {...getRootProps()}>
             <input {...getInputProps()} />
             <UploadFile color="white" fontSize="large" />
           </Link>
+          <div className="logo-container">
+            <Link to="/" className="navbar-logo">
+              MOOD MUSIC
+            </Link>
+          </div>
+          <div className="spotify-login-container">
+            <SpotifyLoginButton />
+          </div>
         </div>
       </nav>
     </>
