@@ -1,7 +1,6 @@
 import * as React from "react";
-import { Typography, Stack } from "@mui/material";
 import "./PieChart.css";
-import { PieChart as MUIPieChart } from "@mui/x-charts/PieChart";
+import { PieChart, pieArcLabelClasses } from '@mui/x-charts/PieChart';
 
 const CustomPieChart = ({setMood}) => {
   // Define your data, styling, and other props for the pie chart
@@ -29,8 +28,8 @@ const CustomPieChart = ({setMood}) => {
     setMood(items[item.dataIndex].label);
   };
 
-  return (
-    <MUIPieChart
+  return (<div className="translated">
+    <PieChart
       colors={colorPalette}
       series={[
         {
@@ -45,9 +44,10 @@ const CustomPieChart = ({setMood}) => {
         },
       ]}
       sx={{
-        [`& .custom-label`]: {
-          fill: "white",
-          fontWeight: "bold", // Add fontWeight and fill properties
+        [`& .${pieArcLabelClasses.root}`]: {
+          fill: 'white',
+          fontWeight: 'bold',
+          fontSize: '25px',
         },
       }}
       onClick={handlePieChartClick}
@@ -55,6 +55,7 @@ const CustomPieChart = ({setMood}) => {
       height={500}
       margin={{ right: 100 }}
     />
+    </div>
   );
 };
 
