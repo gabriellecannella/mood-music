@@ -3,11 +3,17 @@
     transition: fill 0.2s; /* Add a smooth transition effect */
   }
 
-  MUIPieChart.custom-label {
+  PieChart.custom-label {
     fill: white;
     font-weight: bold;
   }
 
   .custom-pie-chart:hover .muix-pie-chart-preview {
     display: none;
+  }
+  .css-1u0lry5-MuiChartsLegend-root {
+    display: none;
+  }
+  .translated{
+    transform: translate(50px,0);
   }

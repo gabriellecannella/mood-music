@@ -54,21 +54,16 @@ function Navbar({ setMood }) {
   return (
     <>
       <MyPopup showModal={isModalOpen} setModal={setModalOpen} setMood={setMood} />
-
       <nav className="navbar">
         <div className="navbar-container">
           <Link className="nav-links" onClick={toggleModal}>
             <CameraButton color="white" fontSize="large" />
           </Link>
-          <Link to="/" className="navbar-logo">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            MOOD MUSIC
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <div className="logo-container">
+            <Link to="/" className="navbar-logo">
+              MOOD MUSIC
             </Link>
+          </div>
           <Link className="nav-links" {...getRootProps()}>
             <input {...getInputProps()} />
             <UploadFile color="white" fontSize="large" />
