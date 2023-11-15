@@ -8,8 +8,6 @@ import Camera from "./components/pages/Camera";
 import MoodWheel from "./components/pages/MoodWheel";
 import Footer from "./components/Footer";
 
-// import results from "./components/results";
-
 function App() {
   const [mood, setMood] = useState("");
   const [isModalOpen, setModalOpen] = useState(false);

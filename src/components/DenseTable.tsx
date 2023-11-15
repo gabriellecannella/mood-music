@@ -9,7 +9,7 @@ export default function StyledTable({ rows }) {
     const loadLocalAlbumImages = () => {
       const songDetails = rows.map((row) => {
         try {
-          const localImageUrl = `/album_covers/${row.id}.jpg`; // Replace with the actual path
+          const localImageUrl = `/album_covers/${row.id}.jpg`;
           return {
             ...row,
             albumImageUrl: localImageUrl,
