@@ -2,14 +2,14 @@ import React, { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import { UploadFile } from "@mui/icons-material";
-import { CameraButton } from './CameraButton';
+import { CameraButton } from "./CameraButton";
 import MyPopup from "./PopupModal";
-import { useDropzone } from 'react-dropzone';
+import { useDropzone } from "react-dropzone";
+import { FileUpload, LibraryMusic } from "@mui/icons-material";
 
-function Navbar({ setMood,  isModalOpen, setModalOpen}) {
+function Navbar({ setMood, isModalOpen, setModalOpen }) {
   const toggleModal = () => setModalOpen(!isModalOpen);
 
-  
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 960) {
@@ -26,18 +26,23 @@ function Navbar({ setMood,  isModalOpen, setModalOpen}) {
 
   return (
     <>
-      <MyPopup showModal={isModalOpen} setModal={setModalOpen} setMood={setMood} />
+      <MyPopup
+        showModal={isModalOpen}
+        setModal={setModalOpen}
+        setMood={setMood}
+      />
       <nav className="navbar">
         <div className="navbar-container">
-          <Link to = "/camera"className="nav-links" >
+          <Link to="/camera" className="nav-links">
             <CameraButton color="white" fontSize="large" />
           </Link>
           <div className="logo-container">
             <Link to="/" className="navbar-logo">
-              MOOD MUSIC
+              MoodMusic&nbsp;
+              <LibraryMusic color="white" fontSize="large" />
             </Link>
           </div>
-          <Link to ="/upload"className="nav-links" >
+          <Link to="/upload" className="nav-links">
             <UploadFile color="white" fontSize="large" />
           </Link>
         </div>
