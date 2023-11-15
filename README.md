@@ -25,9 +25,9 @@ Miniconda is a minimal installer for Conda, a package and environment management
      venv\Scripts\activate
      ```
         **Note for Windows Users:** If you encounter a "running scripts is disabled" error when activating the virtual environment, run PowerShell as Administrator and execute:
-        ```
-        Set-ExecutionPolicy Unrestricted -Scope CurrentUser
-        ```
+           ```
+           Set-ExecutionPolicy Unrestricted -Scope CurrentUser
+           ```
    - **macOS and Linux:**
      ```
      source venv/bin/activate
