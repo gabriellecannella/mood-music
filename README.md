@@ -10,11 +10,10 @@ Miniconda is a minimal installer for Conda, a package and environment management
 
 ### Step 2: Create a Virtual Python Environment
 
-#### For Windows, macOS, and Linux:
-1. Open your terminal or command prompt.
-2. Navigate to your project directory:
+1. Open your terminal.
+2. Navigate to root directory
    ```
-   cd path/to/your/project
+   mood-music/
    ```
 3. Create a virtual environment:
    ```
@@ -25,15 +24,14 @@ Miniconda is a minimal installer for Conda, a package and environment management
      ```
      venv\Scripts\activate
      ```
+        **Note for Windows Users:** If you encounter a "running scripts is disabled" error when activating the virtual environment, run PowerShell as Administrator and execute:
+           ```
+           Set-ExecutionPolicy Unrestricted -Scope CurrentUser
+           ```
    - **macOS and Linux:**
      ```
      source venv/bin/activate
      ```
-
-   **Note for Windows Users:** If you encounter a "running scripts is disabled" error when activating the virtual environment, run PowerShell as Administrator and execute:
-   ```
-   Set-ExecutionPolicy Unrestricted -Scope CurrentUser
-   ```
 5. Install required Python packages:
    ```
    pip install -r requirements.txt
@@ -48,7 +46,7 @@ Download and install Node.js from the official website:
 This ensures that Node.js is properly initialized.
 
 ### Step 5: Install Node Modules
-Navigate to your project's root directory in the terminal or command prompt and run:
+Navigate to project's root directory in terminal and run:
 ```
 npm install
 ```
