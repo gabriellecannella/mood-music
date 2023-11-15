@@ -24,3 +24,5 @@ yarn-error.log*
 
 # downloading spotify data
 backend/get_album_pics.py
+
+virtualEnv
