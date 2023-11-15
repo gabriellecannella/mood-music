@@ -26,4 +26,4 @@ yarn-error.log*
 backend/get_album_pics.py
 
 #virtual environemnt
-virtualEnv
+vm
