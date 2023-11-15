@@ -12,9 +12,9 @@ Miniconda is a minimal installer for Conda, a package and environment management
 
 #### For Windows, macOS, and Linux:
 1. Open your terminal or command prompt.
-2. Navigate to your project directory:
+2. Navigate to the root directory
    ```
-   cd path/to/your/project
+   mood-music/
    ```
 3. Create a virtual environment:
    ```
