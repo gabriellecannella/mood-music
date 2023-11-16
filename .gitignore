@@ -27,3 +27,6 @@ backend/get_album_pics.py
 
 #virtual environemnt
 venv
+
+backend/pics/annotated_snapshot.jpg
+backend/pics/snapshot.jpg
