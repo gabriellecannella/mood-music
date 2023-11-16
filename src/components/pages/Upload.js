@@ -2,8 +2,6 @@ import React, { useState, useEffect, useCallback } from "react";
 import { UploadFile } from "@mui/icons-material";
 import { useDropzone } from 'react-dropzone';
 
-
-
 export default function Upload({setMood}) {
   const onDrop = useCallback(async (acceptedFiles) => {
     try {
