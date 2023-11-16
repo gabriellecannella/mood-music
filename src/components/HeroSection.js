@@ -33,7 +33,7 @@ function HeroSection() {
           buttonStyle="btn--outline"
           buttonSize="btn--large"
         >
-          PICTURE UPLOAD
+          IMAGE UPLOAD
         </ButtonUpload>
       </div>
     </div>
