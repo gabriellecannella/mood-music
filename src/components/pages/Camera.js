@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState} from "react";
 import "../../App.css";
 import PopupModal from '../PopupModal';
 
-function Camera({isModalOpen, setModalOpen}) {
+function Camera() {
+  const [isModalOpen, setModalOpen] = useState(false);
   const toggleModal = () => setModalOpen(!isModalOpen);
-
   return(
     <div>
       <div className="hero-container">

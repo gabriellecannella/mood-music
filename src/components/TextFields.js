@@ -2,7 +2,8 @@ import React from "react";
 import "./TextFields.css";
 
 export default function TextFields({ mood, genre }) {
-  mood = mood.toLowerCase();
+  if(mood)
+    mood = mood.toLowerCase();
   if(genre != ""){
     return (
       <div className="text-fields-container">

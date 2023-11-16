@@ -5,9 +5,13 @@ video {
     position: fixed;
     z-index: -1;
   }
+
+  .dimmed-video {
+    filter: brightness(50%); 
+  }
   
   .hero-container {
-    height: 100vh;
+    height: 90vh;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -18,14 +22,14 @@ video {
   }
   
   .hero-container > h1 {
-    color: #000000;
+    color: #ffffff;
     font-size: 100px;
     margin-top: -100px;
   }
   
   .hero-container > p {
     margin-top: 8px;
-    color: #000000;
+    color: #ffffff;
     font-size: 32px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
       'Lucida Sans', Arial, sans-serif;
@@ -74,7 +78,7 @@ video {
     display: flex;
     justify-content: center; /* Horizontally center the image */
     align-items: center; /* Vertically center the image */
-    height: 100vh; /* Ensure the container spans the entire viewport height */
+    height: 83vh; /* Ensure the container spans the entire viewport height */
   }
   
   .center-image {

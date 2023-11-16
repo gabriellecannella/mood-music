@@ -1,39 +1,22 @@
+import React, { useState, useEffect, useCallback } from "react";
 import "../../App.css";
-import React, { useEffect } from "react";
-import { useState } from "react";
-import TextFields from "../TextFields";
-import DenseTable from "../DenseTable.tsx";
-import axios from "axios";
+import "../HeroSection.css";
+import CustomPieChart from "../PieChart";
+import SongsList from "../SongsList.js";
 
-export default function MoodWheel({mood, accessToken}) {
-  const [rows, setRows] = useState([]);
-  const [genre, setGenre] = useState([]);
-  useEffect(() => {
-    if (rows.length > 0) {
-      window.scrollTo({ top: 740, behavior: "smooth" });
-    }
-  }, [rows]);
-
-
-  useEffect( () => {
-        axios
-          .get(`http://127.0.0.1:5000/songs?arg1=${mood}`)
-          .then((response) => {
-            const data = response.data;
-            try{
-              setGenre(data[0].mood.toLowerCase())
-              setRows(data);
-            }
-            catch{
-              
-            }
-          });
-  }, [mood]);
-
+function MoodWheel() {
+  const [mood, setMood] = useState("");
   return (
-    <>
-      <TextFields setRows={ setRows } mood= {mood} genre={genre} />
-      <DenseTable rows={ rows } accessToken={accessToken}/>
-    </>
+    <div className="">
+      <video src="/videos/background.mp4" autoPlay loop muted className="dimmed-video" />
+      <div className="image-container">
+        <CustomPieChart setMood={setMood}/>
+      </div>
+      <div>
+        <SongsList mood={mood}/>
+      </div>
+    </div>
   );
 }
+
+export default MoodWheel;

@@ -11,27 +11,18 @@ import Footer from "./components/Footer";
 // import results from "./components/results";
 
 function App() {
-  const [mood, setMood] = useState("");
-  const [isModalOpen, setModalOpen] = useState(false);
-  const [accessToken, setAccessToken] = useState(null);
-
   useEffect(() => {
-    const params = new URLSearchParams(window.location.hash.substring(1));
-    const token = params.get('access_token');
-    if (token) {
-      setAccessToken(token);
-    }
   }, []);
   return (
     <>
       <Router>
-        <Navbar setMood= {setMood} isModalOpen={isModalOpen} setModalOpen= {setModalOpen}/>
+        <Navbar/>
         <Routes>
-          <Route path="/" exact element={<Home mood = {mood} setMood = {setMood} accessToken= {accessToken} setAccessToken = {setAccessToken}></Home>}></Route>
-          <Route path="/camera" exact element={<Camera isModalOpen={isModalOpen} setModalOpen= {setModalOpen}></Camera>}></Route>
-          <Route path="/upload" exact element={<Upload setMood = {setMood}></Upload>}></Route>
+          <Route path="/" exact element={<Home></Home>}></Route>
+          <Route path="/camera" exact element={<Camera></Camera>}></Route>
+          <Route path="/upload" exact element={<Upload></Upload>}></Route>
+          <Route path="/mood-wheel" exact element={<MoodWheel></MoodWheel>}></Route>
         </Routes>
-        <MoodWheel mood={mood} accessToken={accessToken}/>
         <Footer />
       </Router>
     </>

@@ -1,8 +1,11 @@
-import React, { useCallback } from "react";
+import React, { useState, useCallback } from "react";
 import { UploadFile } from "@mui/icons-material";
 import { useDropzone } from "react-dropzone";
+import SongsList from "../SongsList.js";
 
-export default function Upload({ setMood }) {
+export default function Upload() {
+  const [mood, setMood] = useState("");
+
   const onDrop = useCallback(
     async (acceptedFiles) => {
       try {
@@ -33,15 +36,20 @@ export default function Upload({ setMood }) {
   });
 
   return (
-    <div className="upload">
-      <video src="/videos/background.mp4" autoPlay loop muted />
+    <div>
+      <div className="upload">
+      <video src="/videos/background.mp4" autoPlay loop muted className="dimmed-video" />
         <div className="hero-container">
-          <h1 style={{ color: "black" }}>UPLOAD IMAGE</h1>
-          <div className="hero-btns">
-            <UploadFile className="custom-upload-btn" color="black" fontSize="extra large" {...getRootProps()}>
-                <input {...getInputProps()} />
-            </UploadFile>
+          <h1 style={{ color: "white" }}>UPLOAD IMAGE</h1>
+            <div className="hero-btns">
+              <UploadFile className="custom-upload-btn" color="black" fontSize="extra large" {...getRootProps()}>
+                  <input {...getInputProps()} />
+              </UploadFile>
+            </div>
           </div>
+      </div>
+      <div>
+        <SongsList mood={mood}/>
       </div>
     </div>
   );
