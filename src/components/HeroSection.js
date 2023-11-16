@@ -1,32 +1,40 @@
 import React from "react";
 import "../App.css";
-import { Button } from "./Button";
 import "./HeroSection.css";
-import { Button_Cam } from "./Button_Cam";
+import { ButtonCamera } from "./buttons/ButtonCamera";
+import { ButtonWheel } from "./buttons/ButtonWheel";
+import { ButtonUpload } from "./buttons/ButtonUpload";
 
 function HeroSection() {
   return (
     <div className="hero-container">
-      <video src="/videos/background_2.mp4" autoPlay loop muted />
+      <video src="/videos/background.mp4" autoPlay loop muted />
       <h1>START LISTENING</h1>
       <p>Music tailored for you.</p>
       <div className="hero-btns">
-        <Button
+        <ButtonWheel
           className="btns"
           buttonStyle="btn--outline"
           buttonSize="btn--large"
-          //link to mood wheel selection
         >
           MOOD WHEEL
-        </Button>
-        <Button_Cam
+        </ButtonWheel>
+
+        <ButtonCamera
           className="btns"
-          buttonStyle="btn--primary"
+          buttonStyle="btn--outline"
           buttonSize="btn--large"
-          onClick={console.log("working yayay")}
         >
           FACE DETECTION
-        </Button_Cam>
+        </ButtonCamera>
+        
+        <ButtonUpload
+          className="btns"
+          buttonStyle="btn--outline"
+          buttonSize="btn--large"
+        >
+          PICTURE UPLOAD
+        </ButtonUpload>
       </div>
     </div>
   );

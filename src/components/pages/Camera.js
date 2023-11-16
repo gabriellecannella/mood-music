@@ -7,7 +7,9 @@ function Camera({isModalOpen, setModalOpen}) {
 
   return(
     <div>
-
+      <div className="hero-container">
+        <video src="/videos/background.mp4" autoPlay loop muted />
+      </div>
       <PopupModal />
       <button onClick={toggleModal}>click here!</button>
     </div>

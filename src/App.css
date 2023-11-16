@@ -17,7 +17,7 @@
 }
 
 .camera {
-  background-image: url('/public/images/img-1.jpg');
+
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -26,7 +26,6 @@
 }
 
 .upload {
-  background-image: url('/public/images/img-1.jpg');
   background-position: center;
   background-size: fill;
   background-repeat: no-repeat;

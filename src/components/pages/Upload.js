@@ -1,8 +1,6 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useCallback } from "react";
 import { UploadFile } from "@mui/icons-material";
 import { useDropzone } from "react-dropzone";
-import { Button_Cam } from "../Button_Cam";
-import "../HeroSection.css";
 
 export default function Upload({ setMood }) {
   const onDrop = useCallback(
@@ -36,23 +34,14 @@ export default function Upload({ setMood }) {
 
   return (
     <div className="upload">
-      <div className="hero-container">
-        <h1 style={{ color: "black" }}>UPLOAD</h1>
-        <p style={{ color: "black" }}>your image below.</p>
-        <div className="hero-btns">
-          <Button_Cam
-            className="btns"
-            buttonStyle="btn--outline"
-            buttonSize="btn--large"
-          >
-            <UploadFile color="black" fontSize="large" />
-          </Button_Cam>
-        </div>
-        <button {...getRootProps()}>
-          {" "}
-          <input {...getInputProps()} />
-          upload
-        </button>
+      <video src="/videos/background.mp4" autoPlay loop muted />
+        <div className="hero-container">
+          <h1 style={{ color: "black" }}>UPLOAD IMAGE</h1>
+          <div className="hero-btns">
+            <UploadFile className="custom-upload-btn" color="black" fontSize="extra large" {...getRootProps()}>
+                <input {...getInputProps()} />
+            </UploadFile>
+          </div>
       </div>
     </div>
   );

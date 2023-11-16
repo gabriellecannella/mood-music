@@ -4,12 +4,9 @@ import "./Navbar.css";
 import { UploadFile } from "@mui/icons-material";
 import { CameraButton } from "./CameraButton";
 import MyPopup from "./PopupModal";
-import { useDropzone } from "react-dropzone";
 import { FileUpload, LibraryMusic } from "@mui/icons-material";
 
 function Navbar({ setMood, isModalOpen, setModalOpen }) {
-  const toggleModal = () => setModalOpen(!isModalOpen);
-
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 960) {
@@ -26,11 +23,6 @@ function Navbar({ setMood, isModalOpen, setModalOpen }) {
 
   return (
     <>
-      <MyPopup
-        showModal={isModalOpen}
-        setModal={setModalOpen}
-        setMood={setMood}
-      />
       <nav className="navbar">
         <div className="navbar-container">
           <Link to="/camera" className="nav-links">

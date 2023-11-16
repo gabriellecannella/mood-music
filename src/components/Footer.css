@@ -6,6 +6,10 @@
     justify-content: center;
     align-items: center;
   }
+
+  .spotify-green-icon {
+    color: #1DB954;
+}
   
   .footer-subscription {
     display: flex;
