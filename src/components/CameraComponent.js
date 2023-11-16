@@ -98,46 +98,48 @@ const CameraComponent = ({setMood, setModal}) => {
   
   return (
     <div>
+    <div className="camera-wrapper">
       <div className="camera-container">
-        <div className="camera-preview">
-          <Webcam
-            audio={false}
-            ref={webcamRef}
-            screenshotFormat="image/jpeg"
-            videoConstraints={{
-              facingMode: 'user',
-              deviceId: selectedDeviceId, // Use the selected camera
-            }}
-            style={{ display: isCameraOn ? 'block' : 'none' }}
-          />
-        </div>
-        <div className="camera-preview">
-          {annotatedSnapshot && (
-            <div>
-              <img src={annotatedSnapshot} alt="Analyzed Snapshot" />
-            </div>
-          )}
+      <div className={`camera-preview ${isCameraOn ? 'camera-on' : ''}`}>
+  <Webcam
+    audio={false}
+    ref={webcamRef}
+    screenshotFormat="image/jpeg"
+    videoConstraints={{
+      facingMode: 'user',
+      deviceId: selectedDeviceId, // Use the selected camera
+    }}
+  />
+</div>
+        {annotatedSnapshot && (
+          <div className="snapshot-preview">
+            <img src={annotatedSnapshot} alt="Analyzed Snapshot" />
+          </div>
+        )}
       </div>
-      </div>
-        <div className="camera-controls">
-          <label>Select Camera:</label>
-          <select
-            onChange={(e) => setSelectedDeviceId(e.target.value)}
-            value={selectedDeviceId || ''}
-          >
-            <option value="">Default Camera</option>
-            {videoDevices.map((device) => (
-              <option key={device.deviceId} value={device.deviceId}>
-                {device.label || `Camera ${videoDevices.indexOf(device) + 1}`}
-              </option>
-            ))}
-          </select>
-          <button onClick={takeSnapshot} disabled={!isCameraOn}>
-            Take Snapshot
-          </button>
-        </div>
     </div>
+    <div className="camera-controls">
+    <div className="select-camera">
+      <label>Select Camera:</label>
+      <select
+        onChange={(e) => setSelectedDeviceId(e.target.value)}
+        value={selectedDeviceId || ''}
+      >
+        <option value="">Default Camera</option>
+        {videoDevices.map((device) => (
+          <option key={device.deviceId} value={device.deviceId}>
+            {device.label || `Camera ${videoDevices.indexOf(device) + 1}`}
+          </option>
+        ))}
+      </select>
+    </div>
+    <button className="snapshot-button" onClick={takeSnapshot} disabled={!isCameraOn}>
+      Take Snapshot
+    </button>
+  </div>
+  </div>
   );
+  
 };
 
 export default CameraComponent;
