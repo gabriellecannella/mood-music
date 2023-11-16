@@ -27,7 +27,7 @@ function HeroSection() {
         >
           FACE DETECTION
         </ButtonCamera>
-        
+
         <ButtonUpload
           className="btns"
           buttonStyle="btn--outline"

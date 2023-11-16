@@ -1,0 +1,86 @@
+.camera-wrapper {
+  position: relative;
+  /* Ensures absolute positioning is relative to this container */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px;
+  width: 100%;
+  /* Full width */
+}
+
+.camera-container {
+  display: flex;
+  justify-content: center;
+  /* Centers camera horizontally */
+  align-items: center;
+  /* Centers camera vertically */
+  flex-direction: column;
+  /* Stacks children vertically */
+  width: 100%;
+  /* Full width */
+  max-width: 600px;
+  /* Maximum width for the camera preview */
+}
+
+.camera-preview {
+  width: 100%;
+  /* Full width of the container */
+  max-width: 600px;
+  /* Maximum width for the camera preview */
+  display: flex;
+  /* Using flex to center Webcam */
+  justify-content: center;
+  /* Center content horizontally */
+  align-items: center;
+  /* Center content vertically */
+}
+
+.camera-on {
+  display: flex;
+  /* Display when camera is on */
+}
+
+.snapshot-preview {
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  /* Ensuring it's also centered */
+  justify-content: center;
+  align-items: center;
+}
+
+.snapshot-preview img {
+  width: 100%;
+  /* Ensures the image fits within the container */
+  height: auto;
+  /* Maintains aspect ratio */
+}
+
+.camera-controls {
+  position: absolute;
+  top: 0;
+  /* No space from the top edge */
+  left: 0;
+  /* No space from the left edge */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 90;
+  /* Keep on top of other content */
+}
+
+.select-camera {
+  margin-bottom: 10px;
+  color: white;
+}
+
+.snapshot-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 2px 10px;
+  border: none;
+  border-radius: 0px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}

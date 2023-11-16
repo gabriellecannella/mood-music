@@ -26,7 +26,7 @@ function Footer() {
           <div class="social-icons">
             <Link
               class="social-icon-link spotify"
-              to="/"
+              to="https://open.spotify.com/"
               target="_blank"
               aria-label="Spotify"
             >

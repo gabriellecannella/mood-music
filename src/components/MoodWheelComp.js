@@ -1,8 +1,8 @@
 import * as React from "react";
-import "./PieChart.css";
+import "./MoodWheelComp.css";
 import { PieChart, pieArcLabelClasses } from '@mui/x-charts/PieChart';
 
-const CustomPieChart = ({setMood}) => {
+const MoodWheelComp = ({setMood}) => {
   // Define your data, styling, and other props for the pie chart
   const items = [
     { label: "Happy", value: 25 },
@@ -59,4 +59,4 @@ const CustomPieChart = ({setMood}) => {
   );
 };
 
-export default CustomPieChart;
+export default MoodWheelComp;
