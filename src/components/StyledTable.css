@@ -1,19 +1,19 @@
-    .scroll-button {
-    background: white;
-    border: 2px solid #4ac776;
-    border-radius: 50%;
-    width: 60px; /* Increased width */
-    height: 60px; /* Increased height */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 3rem; /* Larger font size for the arrow icons */
-    color: #4ac776;
-    cursor: pointer;
-    margin: 0 5px; /* Add some margin for spacing */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a subtle shadow for depth */
-    transition: all 0.3s ease; /* Optional: Smooth transition for hover effects */
-  }
+.scroll-button {
+  background: white;
+  border: 2px solid #4ac776;
+  border-radius: 50%;
+  width: 60px; /* Increased width */
+  height: 40px; /* Increased height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem; /* Larger font size for the arrow icons */
+  color: #4ac776;
+  cursor: pointer;
+  margin: 0 5px; /* Add some margin for spacing */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a subtle shadow for depth */
+  transition: all 0.3s ease; /* Optional: Smooth transition for hover effects */
+}
   
   
   .scroll-button:hover {
