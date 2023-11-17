@@ -4,7 +4,7 @@ import "./TextFields.css";
 export default function TextFields({ mood, genre }) {
   if(mood)
     mood = mood.toLowerCase();
-  if(genre != ""){
+  if (mood != "" && genre != "") {
     return (
       <div className="text-fields-container">
         {genre ? (
