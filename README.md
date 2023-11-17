@@ -68,3 +68,5 @@ npm install
    ```
 
 The application will run in development mode. Open [http://localhost:3000](http://localhost:3000) in your browser to view it.
+
+![alt text]([https://github.com/[username]/[reponame]/blob/[branch]/image.jpg](https://github.com/gabriellecannella/mood-music/blob/main/backend/pics/annotated_snapshot.jpg)https://github.com/gabriellecannella/mood-music/blob/main/backend/pics/annotated_snapshot.jpg?raw=true)
