@@ -1,26 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import "../../App.css";
-import HeroSection from "../HeroSection";
 import Footer from "../Footer";
-import MoodWheel from "./MoodWheel";
+import MoodWheelComp from "../MoodWheelComp.js";
 import FileUpload from "../FIleUpload";
+import Navbar from '../Navbar';
+import SongsList from '../SongsList';
+import "../HeroSection.css";
 
 // import { FileUpload } from "@mui/icons-material";
-function Home({mood, setMood}) {
-  const [accessToken, setAccessToken] = useState(null);
+function Home() {
+  const [mood, setMood] = useState("");
 
   useEffect(() => {
-    const params = new URLSearchParams(window.location.hash.substring(1));
-    const token = params.get('access_token');
-    if (token) {
-      setAccessToken(token);
-    }
   }, []);
   return (
     <>
+      <video src="/videos/background.mp4" autoPlay loop muted className="dimmed-video" />
+      <Navbar setMood={setMood} />
       <FileUpload />
-      <HeroSection setMood = {setMood}/>
-      <MoodWheel mood={mood} accessToken={accessToken}/>
+      <div className="image-container">
+        <MoodWheelComp setMood={setMood} />
+      </div>
+      <SongsList mood={mood} />
       <Footer />
     </>
   );

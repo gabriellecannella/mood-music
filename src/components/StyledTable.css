@@ -1,0 +1,69 @@
+.scroll-button {
+  background: white;
+  border: 2px solid #4ac776;
+  border-radius: 50%;
+  width: 60px;
+  /* Increased width */
+  height: 40px;
+  /* Increased height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  /* Larger font size for the arrow icons */
+  color: #4ac776;
+  cursor: pointer;
+  margin: 0 5px;
+  /* Add some margin for spacing */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* Optional: Add a subtle shadow for depth */
+  transition: all 0.3s ease;
+  /* Optional: Smooth transition for hover effects */
+}
+
+
+.scroll-button:hover {
+  background: #4ac776;
+  /* Change background on hover */
+  color: white;
+  /* Change text color on hover */
+}
+
+.scroll-container {
+  overflow-x: scroll;
+  display: flex;
+  flex-grow: 1;
+  /* Allows the container to grow and occupy available space */
+  align-items: center;
+  padding: 10px;
+  /* Add padding as necessary */
+  margin: 0 10px;
+  /* Add margin to prevent overlap with buttons */
+}
+
+.song-item {
+  width: 300px;
+  margin-right: 20px;
+
+}
+
+.song-item img {
+  width: 300px;
+  height: 300px;
+}
+
+.song-title, .song-artist {
+  color: white;
+  font-size: 1.5rem;
+  max-width: 300px;
+}
+
+.song-artist {
+  font-size: 1rem;
+}
+
+.spotify-button {
+  background: none;
+  border: 0px solid #4ac776;
+  cursor: pointer;
+}

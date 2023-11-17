@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Webcam from 'react-webcam';
-import "./CameraComponent.css"
+import "./CameraComp.css"
 
-const CameraComponent = ({setMood, setModal}) => {
+const CameraComponent = ({ setMood, setModal }) => {
   const webcamRef = useRef(null);
   const [isCameraOn, setIsCameraOn] = useState(true);
   const [videoDevices, setVideoDevices] = useState([]);
@@ -59,67 +59,67 @@ const CameraComponent = ({setMood, setModal}) => {
       const response = await fetch('http://127.0.0.1:5000/camera', {
         method: 'POST',
         body: formData,
-      }).then((response) =>{ 
+      }).then((response) => {
 
         if (response.ok) {
           const label = response.text().then((label) => {
-            console.log({label});
+            console.log({ label });
             setModal(false)
             setMood(label);
 
           }
-            )
+          )
 
-        // const imageBlob = await response.blob();
-        // setAnnotatedSnapshot(URL.createObjectURL(imageBlob));
-      } else {
-        console.error('Error processing snapshot on the server');
-      }
-    })
+          // const imageBlob = await response.blob();
+          // setAnnotatedSnapshot(URL.createObjectURL(imageBlob));
+        } else {
+          console.error('Error processing snapshot on the server');
+        }
+      })
     } catch (error) {
-      console.log("noo"); 
+      console.log("noo");
       console.error('Error sending snapshot to the server:', error);
     }
   };
-  
+
   // Function to convert data URI to Blob
   function dataURItoBlob(dataURI) {
     const byteString = atob(dataURI.split(',')[1]);
     const mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
     const ab = new ArrayBuffer(byteString.length);
     const ia = new Uint8Array(ab);
-  
+
     for (let i = 0; i < byteString.length; i++) {
       ia[i] = byteString.charCodeAt(i);
     }
-  
+
     return new Blob([ab], { type: mimeString });
   }
-  
+
   return (
     <div>
-      <div className="camera-container">
-        <div className="camera-preview">
-          <Webcam
-            audio={false}
-            ref={webcamRef}
-            screenshotFormat="image/jpeg"
-            videoConstraints={{
-              facingMode: 'user',
-              deviceId: selectedDeviceId, // Use the selected camera
-            }}
-            style={{ display: isCameraOn ? 'block' : 'none' }}
-          />
-        </div>
-        <div className="camera-preview">
+      <div className="camera-wrapper">
+        <div className="camera-container">
+          <div className={`camera-preview ${isCameraOn ? 'camera-on' : ''}`}>
+            <Webcam
+              audio={false}
+              ref={webcamRef}
+              screenshotFormat="image/jpeg"
+              videoConstraints={{
+                facingMode: 'user',
+                deviceId: selectedDeviceId, // Use the selected camera
+              }}
+            />
+          </div>
           {annotatedSnapshot && (
-            <div>
+            <div className="snapshot-preview">
               <img src={annotatedSnapshot} alt="Analyzed Snapshot" />
             </div>
           )}
+        </div>
       </div>
-      </div>
-        <div className="camera-controls">
+      <div className="camera-controls">
+        <div className="select-camera">
           <label>Select Camera:</label>
           <select
             onChange={(e) => setSelectedDeviceId(e.target.value)}
@@ -132,12 +132,14 @@ const CameraComponent = ({setMood, setModal}) => {
               </option>
             ))}
           </select>
-          <button onClick={takeSnapshot} disabled={!isCameraOn}>
-            Take Snapshot
-          </button>
         </div>
+        <button className="snapshot-button" onClick={takeSnapshot} disabled={!isCameraOn}>
+          Take Snapshot
+        </button>
+      </div>
     </div>
   );
+
 };
 
 export default CameraComponent;
