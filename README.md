@@ -2,11 +2,15 @@
 # Mood Music
 A website designed to evaluate user's mood through a mood wheel selection, photo capture, or image upload. It then generates a Spotify playlist matching the identified emotional state.
 
-## Screenshots
+## Home Page
 ![Home](https://github.com/gabriellecannella/mood-music/assets/61055337/9d4b2fc9-52c4-48bd-8833-1ce8de5afcb1)
+## Mood Wheel Page
 ![Mood Wheel](https://github.com/gabriellecannella/mood-music/assets/61055337/12014ed4-af02-4c2d-bc52-e6acbc04c75f)
+## Live Photo Capture Page
 ![live Photo Capture](https://github.com/gabriellecannella/mood-music/assets/61055337/24ce0e99-aef7-48a4-883f-a6d828fd45b6)
+## Image Upload Page
 ![Image Upload](https://github.com/gabriellecannella/mood-music/assets/61055337/d837d0e5-6dd4-4053-9dde-92c26b95350c)
+## Song List
 ![Song List](https://github.com/gabriellecannella/mood-music/assets/61055337/9b4b30fd-acb1-4c9b-b3e0-dd2fdab08465)
 
 ## Setup Instructions
